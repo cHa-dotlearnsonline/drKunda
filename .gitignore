@@ -1,0 +1,9 @@
+# Thumnails
+._*
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+db.sqlite3
