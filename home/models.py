@@ -4,8 +4,11 @@ from wagtail.models import Page
 from wagtail.fields import StreamField
 from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 
 class HomePage(Page):
+
+    #TODO: add content panels and add verbose names to eveything
     #Big Hero Image 1
     image = models.ForeignKey(
         "wagtailimages.Image",
@@ -61,11 +64,22 @@ class HomePage(Page):
         help_text="your first Story title"
     )
     # Story Text
-    story_text_1 = models.CharField(
-        max_length=255,
+    story_text_1 = models.TextField(
         null=True,
         blank=True,
         help_text = "your first story text or description. The story in short"
+    )
+    story_title_2 = models.CharField(
+        max_length = 255,
+        null=True,
+        blank =True,
+        help_text="your second story title"
+    )
+
+    story_text_2 = models.TextField (
+        null=True,
+        blank=True,
+        help_text= "your second story text or description."
     )
 
     #TODO: CAll to Action 3 Huge
@@ -77,7 +91,7 @@ class HomePage(Page):
     )
      
     #: call to ACtion 3 button
-    cta_3 = models.CharField(
+    cta_3_button = models.CharField(
         max_length=255,
         null=True,
         blank=True,
@@ -97,7 +111,7 @@ class HomePage(Page):
         blank=True,
     )
 
-    #TODO: Social Media Links and Images
+    #Social Media Links and Images
     social_media = StreamField(
         [
             ("socials", blocks.StructBlock([
@@ -110,3 +124,32 @@ class HomePage(Page):
         null=True,
         blank=True,
     )
+    content_panels = Page.content_panels + [
+        MultiFieldPanel([
+        FieldPanel("image"),
+        FieldPanel("main_image_text"),
+        FieldPanel("main_image_subText")
+        ], heading="Hero Section"),
+        FieldPanel("cta_1_image"),
+        FieldPanel("cta_2"),
+        FieldPanel("cta_3"),
+        FieldPanel("cta_3_button"),
+
+        MultiFieldPanel(
+            [
+                FieldPanel("story_title_1"),
+                FieldPanel("story_text_1")
+            ],
+            heading="Your first Story"
+        ),
+
+        MultiFieldPanel(
+            [
+                FieldPanel("story_title_2"),
+                FieldPanel("story_text_2")
+            ],
+            heading="your second story"
+        ),
+        FieldPanel("customer_review"),
+        FieldPanel("social_media")
+    ]
