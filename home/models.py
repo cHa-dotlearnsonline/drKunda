@@ -20,11 +20,18 @@ class HomePage(Page):
         help_text="This is here as the Main image on your home page. The first one"
     )
     # Hero Message
-    main_image_text = models.CharField(
+    main_image_title = models.CharField(
         max_length=255,
         null=True,
         blank=True,
         help_text="This is your main image text like your Title and name."
+
+    )
+    main_image_text = models.TextField(
+        max_length=255,
+        null=True,
+        blank=True,
+        help_text="This is your main image small text."
     )
     main_image_subText = models.CharField(
         max_length = 255,
@@ -126,9 +133,10 @@ class HomePage(Page):
     )
     content_panels = Page.content_panels + [
         MultiFieldPanel([
-        FieldPanel("image"),
-        FieldPanel("main_image_text"),
-        FieldPanel("main_image_subText")
+            FieldPanel("image"),
+            FieldPanel("main_image_title"),
+            FieldPanel("main_image_text"),
+            FieldPanel("main_image_subText")
         ], heading="Hero Section"),
         FieldPanel("cta_1_image"),
         FieldPanel("cta_2"),
