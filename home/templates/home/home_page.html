@@ -1,21 +1,59 @@
 {% extends "base.html" %}
+{% load wagtailimages_tags wagtailcore_tags %}
 {% load static %}
 
 {% block body_class %}template-homepage{% endblock %}
 
-{% block extra_css %}
-
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %}
-
 {% block content %}
+<style>
+    img {
+        width: 100%;
+    }
+</style>
+<section class="Hero-section">
+    {% image page.image original alt="dr kundas photo" %}
+    <h1>{{ page.main_image_title}}</h1>
+    <h5> {{ page.main_image_subText }}</h5>
+    <p>{{page.main_image_text }}</p>
+</section>
+<section class="Call-to-action">
+    <p class="cta-1">{{page.cta_1}}</p>
+    {% image page.cta_1_image original alt="another dr kunda photo" %}
+    <h3 class="cta-2"> {{page.cta_2}}</h3>
+</section>
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
+<section class="story-board">
+    <h4 class="story-title"> {{ page.story_title_1}}</h4>
+    <p class="story-text"> {{ page.story_text_1}}</p>
 
+    <h4 class="story-title"> {{ page.story_title_2 }}</h4>
+    <p class="story-text">{{ page.story_text_2}}</p>
+</section>
+
+<section class="cta3">
+    <h2>{{ page.cta_3 }}</h2>
+    <button class="btn-call"> {{page.cta_3_button}}</button>
+</section>
+
+<section class="reviews">
+    {% for block in page.customer_review %}
+    {% if block.block_type == "review" %}
+    <div class="rev">
+        <p class="text">{{block.value.review_text }}</p>
+        <p class="person">{{block.value.person}}</p>
+        {% image block.value.transformation_photo original alt="some photos I have no idea about" %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</section>
+
+<footer class="footer"> 
+    {% for block in page.social_media %}
+        {% if block.block_type=="review" %}
+            
+        <a href="{{block.value.your_link}}">{% image block.value.logo original alt="some social media logo" %}</a>
+            
+        {% endif %}
+    {% endfor %}
+</footer>
 {% endblock content %}
