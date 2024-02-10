@@ -89,7 +89,7 @@ class HomePage(Page):
         help_text= "your second story text or description."
     )
 
-    #TODO: CAll to Action 3 Huge
+    # CAll to Action 3 Huge
     cta_3 = models.CharField(
         max_length=255,
         null=True,
@@ -109,7 +109,9 @@ class HomePage(Page):
         [
             ('review', blocks.StructBlock([
             ("review_text", blocks.CharBlock()),
-            ("person", blocks.CharBlock())
+            ("person", blocks.CharBlock()),
+            ("transformation_photo", ImageChooserBlock(required=False))
+            
             ]))
         ],
         verbose_name="Customer Reviews",
@@ -135,8 +137,9 @@ class HomePage(Page):
         MultiFieldPanel([
             FieldPanel("image"),
             FieldPanel("main_image_title"),
+            FieldPanel("main_image_subText"),
             FieldPanel("main_image_text"),
-            FieldPanel("main_image_subText")
+            
         ], heading="Hero Section"),
         FieldPanel("cta_1_image"),
         FieldPanel("cta_2"),
