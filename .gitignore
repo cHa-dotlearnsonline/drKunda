@@ -7,3 +7,6 @@ __pycache__/
 
 # Distribution / packaging
 db.sqlite3
+
+#migrations folder
+/migrations
