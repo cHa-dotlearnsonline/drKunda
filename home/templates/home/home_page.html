@@ -6,145 +6,12 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-<style>
-    img {
-        width: 100%;
-    }
-
-    .Hero-section {
-        height: 100vh;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        /*adjust this number in media queries */
-    }
-
-    .introducer {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .title {
-        font-size: 5em;
-    }
-
-    .subtitle {
-        font-size: 2em;
-        color: white;
-    }
-
-    .main-text {
-        font-size: 25px;
-        padding: 20px;
-        margin: 10px;
-    }
-
-    .main-box {
-        border: solid;
-        border-width: 3px;
-        border-color: rgb(22, 19, 3);
-        background-color: hsla(278, 91%, 62%, 0.9);
-        border-radius: 20px;
-        /* box-shadow: 10px 10px 10px rgb(105, 73, 104); */
-        max-width: 900px;
-    }
-
-    .main-text-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: -200px;
-        /* position: relative;
-        bottom: 100px;  adjust this number in media queries */
-    }
-
-    .cta-1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: purple;
-        font-size: 2em;
-    }
-
-    .Call-to-action,
-    .story-board,
-    .cta3,
-    .reviews {
-        padding: 20px;
-    }
-
-    .image-holder {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .image-2 {
-        object-fit: cover;
-        height: 100%;
-        border-radius: 12px;
-    }
-
-    .cta-2 {
-        color: black;
-        margin-top: -120px;
-        margin-bottom: 100px;
-        padding: 3px;
-        font-size: x-large;
-        text-align: center;
-    }
-
-    .story-title,
-    .story-text {
-        text-align: left;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .story-title,
-    .top-heading {
-        text-transform: uppercase;
-    }
-
-    .story-wrapper {
-        border-left: solid 5px;
-        border-color: hsla(278, 91%, 62%, 1);
-        padding-left: 10px;
-    }
-
-    .cta3,
-    .top-heading {
-        text-align: center;
-    }
-
-    .last-cta {
-        font-size: medium;
-        font-weight: 700;
-        margin-bottom: 20px;
-
-    }
-
-    .try-cta {
-        color: rgb(255, 255, 255);
-    }
-
-    .rev {
-        max-width: 436px;
-        margin-bottom: 50px;
-        margin-top: 50px;
-        box-shadow: rgb(255, 127, 219) 3px 3px 3px 3px;
-        padding: 10px;
-        border-radius: 5px;
-    }
-    /* hardcode the facebook links and social media links */
-    /* remember at width 687 the image acts funny so keep that in mind*/
-    /* 300 pixels is the smallest width I will code for.  */
-</style>
 {% image page.image original as photo %}
 <section class="Hero-section" style=" background-image: url('{{photo.url}}');">
     <div class="introducer">
         <h1 class="honk-heading title">{{ page.main_image_title}}</h1>
         <h5 class="pacifico-regular subtitle"> {{ page.main_image_subText }}</h5>
+
     </div>
 </section>
 <div class="main-text-container">
@@ -175,33 +42,32 @@
 
 <section class="cta3">
     <h2 class="last-cta pt-serif-regular-italic">{{ page.cta_3 }}</h2>
-    <button class="btn-call btn btn-primary ubuntu-light-italic"> {{page.cta_3_button}}</button>
+    <button class="btn-call pt-serif-bold-italic"> <a href="https://wa.me/260976420595" style="color: black;" target="_blank">{{page.cta_3_button}}</a> </button>
 </section>
 
 <section class="reviews">
     <div class="top-heading">
         <h2 class="pt-serif-bold-italic" style="font-size: xx-large;">What Customers Say</h2>
     </div>
-
-    {% for block in page.customer_review %}
-    {% if block.block_type == 'review' %}
-    <div class="rev">
-        <p class="text ubuntu-light-italic">{{ block.value.review_text }}</p>
-        <span class="person pacifico-regular">-{{block.value.person}}</span>
+    <div class="centered-divs">
+        {% for block in page.customer_review %}
+        {% if block.block_type == 'review' %}
+        <div class="rev" style="margin-left:auto; margin-right:auto;">
+            <p class="text ubuntu-light-italic">{{ block.value.review_text }}</p>
+            <span class="person pacifico-regular">-{{block.value.person}}</span>
+        </div>
+        {% endif %}
+        {% endfor %}
     </div>
-    {% endif %}
-    {% endfor %}
+
 
 
 </section>
 
 <footer class="footer">
-    {% for block in page.social_media %}
-    {% if block.block_type == "socials" %}
-
-    <a href="{{block.value.your_link}}">{% image block.value.logo original alt="some social media logo" %}</a>
-
-    {% endif %}
-    {% endfor %}
+    <div class="foots">
+        <div class="icon"> <a href="https://www.instagram.com/dr_kunda/" target="_blank"><i class="bi bi-instagram"></i></a></div>
+        <div class="icon"> <a href="https://web.facebook.com/profile.php?id=100088583896505" target="_blank"><i class="bi bi-facebook"></i></a></div>
+    </div>
 </footer>
 {% endblock content %}

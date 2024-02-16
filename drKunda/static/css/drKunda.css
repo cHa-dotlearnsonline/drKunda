@@ -110,3 +110,176 @@
     "BLED" 0,
     "SCAN" 0;
 }
+
+/* custom css */
+img {
+    width: 100%;
+}
+
+.Hero-section {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    /*adjust this number in media queries */
+}
+
+.introducer {
+    width: 100%;
+    padding: 20px;
+    transform: translateY(100%);
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 4em;
+}
+
+.subtitle {
+    font-size: 2em;
+    color: white;
+}
+
+.main-text {
+    font-size: 1.4em;
+    padding: 20px;
+    margin: 10px;
+}
+
+.main-box {
+    background-color: hsla(278, 91%, 62%, 0.9);
+    border-radius: 20px;
+    max-width: 900px;
+}
+
+.main-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+}
+
+.cta-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: purple;
+    font-size: 2em;
+}
+
+.Call-to-action,
+.story-board,
+.cta3,
+.reviews {
+    padding: 20px;
+}
+
+.image-holder {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-2 {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 12px;
+    box-shadow: gray 5px 5px 5px 5px;
+}
+
+.cta-2 {
+    color: black;
+    margin-top: -120px;
+    margin-bottom: 100px;
+    padding: 3px;
+    font-size: x-large;
+    text-align: center;
+}
+
+.story-title,
+.story-text {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.story-title,
+.top-heading {
+    text-transform: uppercase;
+}
+
+.story-wrapper {
+    border-left: solid 5px;
+    border-color: hsla(278, 91%, 62%, 1);
+    padding-left: 10px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+.cta3,
+.top-heading {
+    text-align: center;
+}
+
+.last-cta {
+    font-size: 1.9em;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+}
+
+.try-cta {
+    color: rgb(255, 255, 255);
+}
+
+.rev {
+    max-width: 436px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    box-shadow: rgb(255, 127, 219) 3px 3px 3px 3px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.btn-call {
+    background-color: rgb(255, 127, 219);
+    padding: 9px;
+    margin: 9px;
+    border: none;
+    font-size: 1.6em;
+    border-radius: 8px;
+    box-shadow: pink 1.5px 1.5px 1.5px 1.5px;
+}
+a {
+    text-decoration: none;
+}
+.btn-call:hover {
+    background-color: rgb(182, 91, 194);
+    box-shadow: hsla(278, 91%, 62%, 1) 1.5px 1.5px 1.5px 1.5px;
+}
+.foots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon {
+    margin:10px;
+    font-size: 2.5em;
+}
+.bi {
+    color:rgb(255, 127, 219);
+}
+@media screen and (min-width:750px) {
+    .Hero-section {
+        background-position: 40% 30%;
+    }
+}
+
+@media screen and (min-width: 490px) {
+    .cta-1 {
+        font-size: 3em;
+    }
+}
