@@ -10,3 +10,6 @@ db.sqlite3
 
 #migrations folder
 /migrations
+
+#environment variables
+*.env
