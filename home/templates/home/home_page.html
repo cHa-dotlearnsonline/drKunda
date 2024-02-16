@@ -10,62 +10,198 @@
     img {
         width: 100%;
     }
+
     .Hero-section {
         height: 100vh;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
+        background-position: 50% 0;
+        /*adjust this number in media queries */
     }
 
+    .introducer {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 5em;
+    }
+
+    .subtitle {
+        font-size: 2em;
+        color: white;
+    }
+
+    .main-text {
+        font-size: 25px;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .main-box {
+        border: solid;
+        border-width: 3px;
+        border-color: rgb(22, 19, 3);
+        background-color: hsla(278, 91%, 62%, 0.9);
+        border-radius: 20px;
+        /* box-shadow: 10px 10px 10px rgb(105, 73, 104); */
+        max-width: 900px;
+    }
+
+    .main-text-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -200px;
+        /* position: relative;
+        bottom: 100px;  adjust this number in media queries */
+    }
+
+    .cta-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: purple;
+        font-size: 2em;
+    }
+
+    .Call-to-action,
+    .story-board,
+    .cta3,
+    .reviews {
+        padding: 20px;
+    }
+
+    .image-holder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-2 {
+        object-fit: cover;
+        height: 100%;
+        border-radius: 12px;
+    }
+
+    .cta-2 {
+        color: black;
+        margin-top: -120px;
+        margin-bottom: 100px;
+        padding: 3px;
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .story-title,
+    .story-text {
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .story-title,
+    .top-heading {
+        text-transform: uppercase;
+    }
+
+    .story-wrapper {
+        border-left: solid 5px;
+        border-color: hsla(278, 91%, 62%, 1);
+        padding-left: 10px;
+    }
+
+    .cta3,
+    .top-heading {
+        text-align: center;
+    }
+
+    .last-cta {
+        font-size: medium;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+    }
+
+    .try-cta {
+        color: rgb(255, 255, 255);
+    }
+
+    .rev {
+        max-width: 436px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        box-shadow: rgb(255, 127, 219) 3px 3px 3px 3px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    /* hardcode the facebook links and social media links */
     /* remember at width 687 the image acts funny so keep that in mind*/
+    /* 300 pixels is the smallest width I will code for.  */
 </style>
 {% image page.image original as photo %}
 <section class="Hero-section" style=" background-image: url('{{photo.url}}');">
     <div class="introducer">
-        <h1 class="honk-heading">{{ page.main_image_title}}</h1>
-        <h5 class="pacifico-regular"> {{ page.main_image_subText }}</h5>
+        <h1 class="honk-heading title">{{ page.main_image_title}}</h1>
+        <h5 class="pacifico-regular subtitle"> {{ page.main_image_subText }}</h5>
     </div>
-
-    
 </section>
-<p>{{page.main_image_text }}</p>
+<div class="main-text-container">
+    <div class="pt-serif-bold main-text main-box">{{page.main_image_text }}</div>
+</div>
 <section class="Call-to-action">
-    <p class="cta-1">{{page.cta_2}}</p>
-    {% image page.cta_1_image original alt="another dr kunda photo" %}
-    <h3 class="cta-2"> {{page.cta_3}}</h3>
+    <div class="cta-1">
+        <p class="pt-serif-bold-italic">{{page.cta_2}}</p>
+    </div>
+    <div class="image-holder">
+        {% image page.cta_1_image original class="image-2" alt="another dr kunda photo" %}
+    </div>
+    <div class="cta-2"> <span class="noto-serif-heading try-cta">{{page.cta_3}} </span></div>
 </section>
 
 <section class="story-board">
-    <h4 class="story-title"> {{ page.story_title_1}}</h4>
-    <p class="story-text"> {{ page.story_text_1}}</p>
+    <div class="story-wrapper">
+        <h2 class="story-title pt-serif-bold-italic"> {{ page.story_title_1}}</h2>
+        <p class="story-text pt-serif-regular"> {{ page.story_text_1}}</p>
+    </div>
+    <div class="story-wrapper">
+        <h2 class="story-title pt-serif-bold-italic"> {{ page.story_title_2 }}</h2>
+        <p class="story-text pt-serif-regular">{{ page.story_text_2}}</p>
+    </div>
 
-    <h4 class="story-title"> {{ page.story_title_2 }}</h4>
-    <p class="story-text">{{ page.story_text_2}}</p>
+
 </section>
 
 <section class="cta3">
-    <h2>{{ page.cta_3 }}</h2>
-    <button class="btn-call btn btn-primary"> {{page.cta_3_button}}</button>
+    <h2 class="last-cta pt-serif-regular-italic">{{ page.cta_3 }}</h2>
+    <button class="btn-call btn btn-primary ubuntu-light-italic"> {{page.cta_3_button}}</button>
 </section>
 
 <section class="reviews">
+    <div class="top-heading">
+        <h2 class="pt-serif-bold-italic" style="font-size: xx-large;">What Customers Say</h2>
+    </div>
+
     {% for block in page.customer_review %}
-        {% if block.block_type == 'review' %}
-        <div class="rev">
-            <p class="text">{{ block.value.review_text }}</p>
-            <p class="person">{{block.value.person}}</p>
-            {% image block.value.transformation_photo original alt="some photos I have no idea about" %}
-        </div>
-        {% endif %}
+    {% if block.block_type == 'review' %}
+    <div class="rev">
+        <p class="text ubuntu-light-italic">{{ block.value.review_text }}</p>
+        <span class="person pacifico-regular">-{{block.value.person}}</span>
+    </div>
+    {% endif %}
     {% endfor %}
+
+
 </section>
 
-<footer class="footer"> 
+<footer class="footer">
     {% for block in page.social_media %}
-        {% if block.block_type == "socials" %}
-            
-        <a href="{{block.value.your_link}}">{% image block.value.logo original alt="some social media logo" %}</a>
-            
-        {% endif %}
+    {% if block.block_type == "socials" %}
+
+    <a href="{{block.value.your_link}}">{% image block.value.logo original alt="some social media logo" %}</a>
+
+    {% endif %}
     {% endfor %}
 </footer>
 {% endblock content %}
