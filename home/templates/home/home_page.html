@@ -7,66 +7,92 @@
 
 {% block content %}
 {% image page.image original as photo %}
+<style>
+.hero-bottom {
+    width: 100%;
+    height: 5vw;
+    position: absolute;
+    bottom: 0px;
+    background: linear-gradient(rgba(255,0,0,0), #41465a, #36454f);
+}
+</style>
 
 <section class="Hero-section" style='position: relative; background-image: url("{% static 'image/kundabackground.JPG' %}");'>
-    <!-- <div class="introducer">
-        <h1 class="honk-heading title">{{ page.main_image_title}}</h1>
-        <h5 class="pacifico-regular subtitle"> {{ page.main_image_subText }}</h5>
-
-    </div> -->
     <div style="display: flex; align-items: center; justify-content: center; position: absolute; top:50%; transform:translateY(-50%);">
         <img src="{% static 'image/drkunda2.png' %}" alt="" class="p-5  d-block" style="max-width: 700px;">
     </div>
-        
+    <div class="hero-bottom">
+
+    </div>
 </section>
 <section class="two-section-holder" style='padding-bottom: 10rem; background-image: url("{% static 'image/blob-haikei3.svg' %}");'>
-<div class="main-text-container">
-    <div class="pt-serif-bold main-text main-box" style='position:relative; background-image: url("{%static 'image/blurry-gradient-haikei2.svg' %}");'>
-        {{page.main_image_text }}</div>
-</div>
+    <div class="main-text-container">
+        <div class="pt-serif-bold main-text main-box" style='position:relative; background-image: url("{%static 'image/blurry-gradient-haikei2.svg' %}");'>
+            {{page.main_image_text }}</div>
+    </div>
 
     <div class="Call-to-action">
         <div class="cta-1">
             <p class="pt-serif-bold-italic"><a href="https://wa.me/260976420595" target="_blank">{{page.cta_2}}</a> </p>
         </div>
         <div class="image-holder">
-            <img src="{% static 'image/kundapicture2.JPG' %}" alt="photo of Dr. Kunda in a standing pose" class="image-2">
+            <img src="{% static 'image/kundapicture2.JPG' %}" alt="photo of Dr. Kunda in a standing pose"
+                class="image-2">
         </div>
         <!-- <div class="cta-2" style="display:none;"> <span class="noto-serif-heading try-cta">{{page.cta_3}} </span></div> -->
     </div>
-    
+
     <div class="story-board">
         <div class="story-wrapper">
             <h2 class="story-title pt-serif-bold-italic"> The Pitch </h2>
-            <p class="story-text pt-serif-regular mb-5">Are you a busy woman struggling to find the time and energy to prioritise your health and weight loss goals? Look no further! Dr. Kunda is here to support you on your journey towards sustainable weight loss and improved well-being. 
+            <p class="story-text pt-serif-regular mb-5">Are you a busy woman struggling to find the time and energy to
+                prioritise your health and weight loss goals? Look no further! Dr. Kunda is here to support you on your
+                journey towards sustainable weight loss and improved well-being.
             </p>
-            <p class="story-text pt-serif-regular mb-5">As a busy woman herself, Dr. Kunda understands the challenges you face in juggling work, family, and personal commitments while trying to prioritise your health. 
+            <p class="story-text pt-serif-regular mb-5">As a busy woman herself, Dr. Kunda understands the challenges
+                you face in juggling work, family, and personal commitments while trying to prioritise your health.
             </p>
-            <p class="story-text pt-serif-regular mb-5">With her unique blend of medical expertise and compassionate coaching, she empowers women to achieve lasting weight loss results without sacrificing work or time with family.</p>
+            <p class="story-text pt-serif-regular mb-5">With her unique blend of medical expertise and compassionate
+                coaching, she empowers women to achieve lasting weight loss results without sacrificing work or time
+                with family.</p>
         </div>
         <div class="story-wrapper">
             <h2 class="story-title pt-serif-bold-italic"> {{ page.story_title_2 }}</h2>
-            <p class="story-text pt-serif-regular mb-5">Dr. Kunda’s approach is tailored to meet your individual needs and preferences, as she works with you to develop a holistic weight loss plan that takes into account your medical history, lifestyle, and goals. 
+            <p class="story-text pt-serif-regular mb-5">Dr. Kunda’s approach is tailored to meet your individual needs
+                and preferences, as she works with you to develop a holistic weight loss plan that takes into account
+                your medical history, lifestyle, and goals.
             </p>
-            <p class="story-text pt-serif-regular mb-5">Whether you’re looking to shed a few pounds, manage chronic conditions, or simply adopt healthier habits, Dr. Kunda will provide you with the guidance, support, and accountability you need to succeed.             </p>
-            <p class="story-text pt-serif-regular mb-5">What sets Dr. Kunda apart is her emphasis on sustainability; Instead of quick fixes or fad diets, she focuses on helping you make long-term, sustainable changes that fit seamlessly into your busy life. With her evidence-based strategies, practical tips, and ongoing support, you’ll not only lose weight but also develop healthy habits that last a lifetime.</p>
-            <p class="story-text pt-serif-regular mb-5">Don’t let your busy schedule hold you back from achieving your weight loss goals. Take the first step towards a healthier, happier you by scheduling a consultation with Dr. Kunda today. 
+            <p class="story-text pt-serif-regular mb-5">Whether you’re looking to shed a few pounds, manage chronic
+                conditions, or simply adopt healthier habits, Dr. Kunda will provide you with the guidance, support, and
+                accountability you need to succeed. </p>
+            <p class="story-text pt-serif-regular mb-5">What sets Dr. Kunda apart is her emphasis on sustainability;
+                Instead of quick fixes or fad diets, she focuses on helping you make long-term, sustainable changes that
+                fit seamlessly into your busy life. With her evidence-based strategies, practical tips, and ongoing
+                support, you’ll not only lose weight but also develop healthy habits that last a lifetime.</p>
+            <p class="story-text pt-serif-regular mb-5">Don’t let your busy schedule hold you back from achieving your
+                weight loss goals. Take the first step towards a healthier, happier you by scheduling a consultation
+                with Dr. Kunda today.
             </p>
         </div>
     </div>
     <div class="cta3">
         <h2 class="last-cta pt-serif-regular-italic">{{ page.cta_3 }}</h2>
-        <button class="btn-call pt-serif-bold-italic"> <a href="https://wa.me/260976420595" style="color:#edf6ff;" target="_blank">{{page.cta_3_button}}</a> </button>
+        <br>
+        <button class="btn-call pt-serif-bold-italic"> <a href="https://wa.me/260976420595" style="color:#edf6ff;"
+                target="_blank">Buy a Meal/Workout Plan</a> </button> <br><br>
+        <button class="btn-call pt-serif-bold-italic"> <a href="https://wa.me/260976420595" style="color:#edf6ff;"
+                target="_blank">{{page.cta_3_button}}</a> </button>
     </div>
 </section>
-<section class=" second-part" style='background-image: url("{%static 'image/blob-haikei1.svg' %}");'>
+<section class=" second-part" style='background-image: url("{%static ' image/blob-haikei1.svg' %}");'>
     <div class="text-container w-100">
         <div class="quote-box w-75">
-            <div class="carousel slide" data-bs-ride = "carousel">
+            <div class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner mt-md-5 ps-5 mb-5">
                     <div class="carousel-item active">
                         <div class="quote-text">
-                            <p class="pt-serif-regular ps-md-2 p-0">"If you want to lose weight for good, you need a plan that allows you to live a life you actually enjoy"</p>
+                            <p class="pt-serif-regular ps-md-2 p-0">"If you want to lose weight for good, you need a
+                                plan that allows you to live a life you actually enjoy"</p>
                         </div>
                         <div class="atribution fs-5">
                             <span>-Dr.Kunda</span>
@@ -76,7 +102,7 @@
                         <div class="quote-text">
                             <p class="pt-serif-regular ps-2 p-0">
                                 “The key to sustainable weight loss is learning healthier habits”
-                                </p>
+                            </p>
                         </div>
                         <div class="atribution fs-sm-5">
                             <span>-Dr.Kunda</span>
@@ -85,36 +111,38 @@
                 </div>
             </div>
 
-            
-        </div>
-    </div>    
-    <div class="reviews ">
-        <div class="top-heading mt-5 mb-5">
-            <h2 class="pt-serif-bold-italic fw-light fs-1" >Customer Reviews</h2>
-        </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 order-2 order-md-1">
-                <div class="centered-divs mt-5">
-                    {% for block in page.customer_review|slice:"3" %}
-                    {% if block.block_type == 'review' %}
-                    <div class="rev text-center" style="margin-left:auto; margin-right:auto;">
-                        <p class="pt-serif-regular" > <span style="font-weight: 700;">"</span> {{ block.value.review_text }} <span style="font-weight: 700;">"</span> </p>
-                        <span class="pacifico-regular" >-{{block.value.person}}</span>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
 
-            </div>
-            <div class="col-md-6 order-1 order-md-2">
-                <!--Will have the third image-->
-                <div class="image-holder mb-md-5" style="margin-top:4rem;">
-                    <img src="{% static 'image/kundapicture3.JPG' %}" class="shadow"style="border-radius:10px; max-width: 400px;" alt="Dr. Kunda in another pose with her hand to her lips" class="image-2">
-                </div>
-            </div>
         </div>
     </div>
+    <div class="reviews ">
+        <div class="top-heading mt-5 mb-5">
+            <h2 class="pt-serif-bold-italic fw-light fs-1">Customer Reviews</h2>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 order-2 order-md-1">
+                    <div class="centered-divs mt-5">
+                        {% for block in page.customer_review|slice:"3" %}
+                        {% if block.block_type == 'review' %}
+                        <div class="rev text-center" style="margin-left:auto; margin-right:auto;">
+                            <p class="pt-serif-regular"> <span style="font-weight: 700;">"</span> {{block.value.review_text }} <span style="font-weight: 700;">"</span> </p>
+                            <span class="pacifico-regular">-{{block.value.person}}</span>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
+                </div>
+                <div class="col-md-6 order-1 order-md-2">
+                    <!--Will have the third image-->
+                    <div class="image-holder mb-md-5" style="margin-top:4rem;">
+                        <img src="{% static 'image/kundapicture3.JPG' %}" class="shadow"
+                            style="border-radius:10px; max-width: 400px;"
+                            alt="Dr. Kunda in another pose with her hand to her lips" class="image-2">
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>
@@ -124,14 +152,17 @@
     <div class="pt-5">
         <div class="container">
             <div class="row">
-                <div class="col-9 mx-auto" style = "border: solid 1px; border-color:#800080; border-radius:24px;">
+                <div class="col-9 mx-auto" style="border: solid 1px; border-color:#800080; border-radius:24px;">
                     <div class="container">
-                        <div class="row" >
+                        <div class="row">
                             <div class="col-md-6 foots">
                                 <p class="main-text pt-serif-bold-italic fs-5 text-center">{{ page.cta_3 }}</p>
                             </div>
                             <div class="col-md-6 foots">
-                                <button class="fs-3 pt-serif-bold-italic pt-2 pb-2 ps-4 pe-4" style="border-radius:12px; border:none; background-color:#800080; animation: shrink-grow 2s infinite;"><a href="https://wa.me/260976420595" style="color:#edf6ff;" target="_blank">{{page.cta_3_button}}</a></button>
+                                <button class="fs-3 pt-serif-bold-italic pt-2 pb-2 ps-4 pe-4"
+                                    style="border-radius:12px; border:none; background-color:#800080; animation: shrink-grow 2s infinite;"><a
+                                        href="https://wa.me/260976420595" style="color:#edf6ff;"
+                                        target="_blank">{{page.cta_3_button}}</a></button>
                             </div>
                         </div>
                     </div>
@@ -140,20 +171,25 @@
             </div>
         </div>
     </div>
-        <div class="pt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 foots"><p class="main-text pt-serif-bold fs-5 text-center">Follow Dr. Kunda on favorite platforms.</p></div>
-                    <div class="col-md-6 foots">
-                        <div class="icon"> <a href="https://www.instagram.com/dr_kunda/" target="_blank"><i class="bi bi-instagram"></i></a></div>
-                        <div class="icon"> <a href="https://web.facebook.com/profile.php?id=100088583896505" target="_blank"><i class="bi bi-facebook"></i></a></div>
-                        <div class="icon"> <a href="https://www.linkedin.com/in/kunda-phiri-md/" target="_blank"><i class="bi bi-linkedin"></i></a></div>
-                    </div>
-                    <div class="col-12 d-flex justify-content-center mb-5 mt-2"><span>Copyright Dr.Kunda</span></div>
+    <div class="pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 foots">
+                    <p class="main-text pt-serif-bold fs-5 text-center">Follow Dr. Kunda on favorite platforms.</p>
                 </div>
+                <div class="col-md-6 foots">
+                    <div class="icon"> <a href="https://www.instagram.com/dr_kunda/" target="_blank"><i
+                                class="bi bi-instagram"></i></a></div>
+                    <div class="icon"> <a href="https://web.facebook.com/profile.php?id=100088583896505"
+                            target="_blank"><i class="bi bi-facebook"></i></a></div>
+                    <div class="icon"> <a href="https://www.linkedin.com/in/kunda-phiri-md/" target="_blank"><i
+                                class="bi bi-linkedin"></i></a></div>
+                </div>
+                <div class="col-12 d-flex justify-content-center mb-5 mt-2"><span>Copyright Dr.Kunda</span></div>
             </div>
         </div>
     </div>
- 
+    </div>
+
 </footer>
 {% endblock content %}
