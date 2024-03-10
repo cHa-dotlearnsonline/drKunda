@@ -7,19 +7,9 @@
 
 {% block content %}
 {% image page.image original as photo %}
-<style>
-.hero-bottom {
-    width: 100%;
-    height: 5vw;
-    position: absolute;
-    bottom: 0px;
-    background: linear-gradient(rgba(255,0,0,0), #41465a, #36454f);
-}
-</style>
-
-<section class="Hero-section" style='position: relative; background-image: url("{% static 'image/kundabackground.JPG' %}");'>
-    <div style="display: flex; align-items: center; justify-content: center; position: absolute; top:50%; transform:translateY(-50%);">
-        <img src="{% static 'image/drkunda2.png' %}" alt="" class="p-5  d-block" style="max-width: 700px;">
+<section class="Hero-section" style='background-image: url("{% static 'image/kundabackground.JPG' %}");'>
+    <div class="hero-txt-image">
+        <img src="{% static 'image/drkunda3.png' %}" alt="" class="p-5  d-block" style="max-width: 700px;">
     </div>
     <div class="hero-bottom">
 
@@ -44,7 +34,7 @@
 
     <div class="story-board">
         <div class="story-wrapper">
-            <h2 class="story-title pt-serif-bold-italic"> The Pitch </h2>
+            <!-- <h2 class="story-title pt-serif-bold-italic"> The Pitch </h2> -->
             <p class="story-text pt-serif-regular mb-5">Are you a busy woman struggling to find the time and energy to
                 prioritise your health and weight loss goals? Look no further! Dr. Kunda is here to support you on your
                 journey towards sustainable weight loss and improved well-being.
@@ -115,12 +105,14 @@
         </div>
     </div>
     <div class="reviews ">
-        <div class="top-heading mt-5 mb-5">
-            <h2 class="pt-serif-bold-italic fw-light fs-1">Customer Reviews</h2>
-        </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6 order-2 order-md-1">
+                <div class="col-12 order-2 order-md-1">
+                    <div class="top-heading mt-5">
+                        <h2 class="pt-serif-bold-italic fw-light fs-1">Client Reviews</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 order-3 order-md-2">
                     <div class="centered-divs mt-5">
                         {% for block in page.customer_review|slice:"3" %}
                         {% if block.block_type == 'review' %}
@@ -133,7 +125,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-6 order-1 order-md-2">
+                <div class="col-md-6 order-1 order-md-3">
                     <!--Will have the third image-->
                     <div class="image-holder mb-md-5" style="margin-top:4rem;">
                         <img src="{% static 'image/kundapicture3.JPG' %}" class="shadow"
@@ -141,6 +133,7 @@
                             alt="Dr. Kunda in another pose with her hand to her lips" class="image-2">
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -175,12 +168,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 foots">
-                    <p class="main-text pt-serif-bold fs-5 text-center">Follow Dr. Kunda on favorite platforms.</p>
+                    <p class="main-text pt-serif-bold fs-5 text-center">Follow Dr. Kunda on your favorite platforms.</p>
                 </div>
                 <div class="col-md-6 foots">
                     <div class="icon"> <a href="https://www.instagram.com/dr_kunda/" target="_blank"><i
                                 class="bi bi-instagram"></i></a></div>
-                    <div class="icon"> <a href="https://web.facebook.com/profile.php?id=100088583896505"
+                    <div class="icon"> <a href="https://www.facebook.com/profile.php?id=100093129512594&mibextid=LQQJ4d"
                             target="_blank"><i class="bi bi-facebook"></i></a></div>
                     <div class="icon"> <a href="https://www.linkedin.com/in/kunda-phiri-md/" target="_blank"><i
                                 class="bi bi-linkedin"></i></a></div>
